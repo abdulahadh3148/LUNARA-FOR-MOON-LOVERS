@@ -38,6 +38,7 @@ $user_id = $_GET['user_id'] ?? $_SESSION['user_id'];
   </script>
   <style>
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .icon-filled { font-variation-settings: 'FILL' 1 !important; }
     body { min-height: max(884px, 100dvh); }
   </style>
 </head>
@@ -57,7 +58,7 @@ $user_id = $_GET['user_id'] ?? $_SESSION['user_id'];
               md:relative md:w-20 lg:w-64 md:border-t-0 md:border-r md:h-screen md:bg-transparent md:dark:bg-transparent md:pt-8 md:pb-8 md:px-2 lg:px-4 flex md:flex-col md:justify-start">
     <div class="hidden md:flex mb-8 items-center justify-center lg:justify-start px-2">
        <h1 class="hidden lg:block text-2xl font-extrabold tracking-tight text-primary">LUNARA</h1>
-       <span class="lg:hidden material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">nightlight</span>
+       <span class="lg:hidden material-symbols-outlined text-primary text-4xl icon-filled">nightlight</span>
     </div>
     <div class="flex justify-around items-center h-14 md:h-auto md:flex-col md:gap-2 md:items-start w-full">
       <a href="index.php" class="flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white group">
@@ -72,7 +73,7 @@ $user_id = $_GET['user_id'] ?? $_SESSION['user_id'];
       
       <?php if ($isLoggedIn): ?>
       <a href="profile.php?user_id=<?= $_SESSION['user_id'] ?>" class="flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-900 dark:text-white font-bold group">
-        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">person</span>
+        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform icon-filled">person</span>
         <span class="hidden lg:block text-lg">Profile</span>
       </a>
       <!-- Add Post -->
@@ -177,8 +178,8 @@ $user_id = $_GET['user_id'] ?? $_SESSION['user_id'];
                  <div class="aspect-square bg-zinc-200 dark:bg-zinc-800 relative group cursor-pointer overflow-hidden md:rounded-lg">
                     ${mediaInner}
                     <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 text-white font-bold">
-                       <div class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span> ${post.like_count}</div>
-                       <div class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mode_comment</span> ${post.comment_count}</div>
+                       <div class="flex items-center gap-1"><span class="material-symbols-outlined icon-filled">favorite</span> ${post.like_count}</div>
+                       <div class="flex items-center gap-1"><span class="material-symbols-outlined icon-filled">mode_comment</span> ${post.comment_count}</div>
                     </div>
                  </div>
               `;

@@ -51,6 +51,9 @@
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
+    .icon-filled {
+      font-variation-settings: 'FILL' 1 !important;
+    }
   </style>
 
   <!-- 📏 Page height fix -->
@@ -81,7 +84,7 @@
     <!-- Logo for PC -->
     <div class="hidden md:flex mb-8 items-center justify-center lg:justify-start px-2">
        <h1 class="hidden lg:block text-2xl font-extrabold tracking-tight text-primary">LUNARA</h1>
-       <span class="lg:hidden material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">nightlight</span>
+       <span class="lg:hidden material-symbols-outlined text-primary text-4xl icon-filled">nightlight</span>
     </div>
 
     <!-- Nav Links Container -->
@@ -89,7 +92,7 @@
       
       <!-- Home (Active) -->
       <a href="#" class="flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-900 dark:text-white font-bold group">
-        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform icon-filled">home</span>
         <span class="hidden lg:block text-lg">Home</span>
       </a>
 
@@ -213,7 +216,7 @@
 
         <div class="flex items-center justify-between px-3 pt-3 pb-2">
           <div class="flex items-center gap-4">
-            <button><span class="material-symbols-outlined text-[28px] text-red-500 text-[28px]" style="font-variation-settings: 'FILL' 1;">favorite</span></button>
+            <button><span class="material-symbols-outlined text-[28px] text-red-500 icon-filled">favorite</span></button>
             <button><span class="material-symbols-outlined text-[28px]">mode_comment</span></button>
             <button><span class="material-symbols-outlined text-[28px]">send</span></button>
           </div>

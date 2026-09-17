@@ -55,6 +55,9 @@ $isLoggedIn = isset($_SESSION['user_id']);
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
+    .icon-filled {
+      font-variation-settings: 'FILL' 1 !important;
+    }
   </style>
 
   <!-- 📏 Page height fix -->
@@ -85,7 +88,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
     <!-- Logo for PC -->
     <div class="hidden md:flex mb-8 items-center justify-center lg:justify-start px-2">
        <h1 class="hidden lg:block text-2xl font-extrabold tracking-tight text-primary">LUNARA</h1>
-       <span class="lg:hidden material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">nightlight</span>
+       <span class="lg:hidden material-symbols-outlined text-primary text-4xl icon-filled">nightlight</span>
     </div>
 
     <!-- Nav Links Container -->
@@ -93,7 +96,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
       
       <!-- Home (Active) -->
       <a href="#" class="flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-900 dark:text-white font-bold group">
-        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform icon-filled">home</span>
         <span class="hidden lg:block text-lg">Home</span>
       </a>
 
@@ -280,11 +283,11 @@ $isLoggedIn = isset($_SESSION['user_id']);
       
       if (data.success) {
         if (data.action === 'liked') {
-          icon.style.fontVariationSettings = "'FILL' 1";
+          icon.classList.add('icon-filled');
           icon.classList.add('text-red-500');
           countSpan.innerText = currentCount + 1 + ' likes';
         } else {
-          icon.style.fontVariationSettings = "'FILL' 0";
+          icon.classList.remove('icon-filled');
           icon.classList.remove('text-red-500');
           countSpan.innerText = currentCount - 1 + ' likes';
         }
@@ -396,8 +399,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
           const timeStr = diffHrs < 24 ? `${diffHrs}h ago` : `${Math.round(diffHrs/24)}d ago`;
 
           // Like status styling
-          const likeStyle = post.user_liked > 0 ? "font-variation-settings: 'FILL' 1;" : "font-variation-settings: 'FILL' 0;";
-          const likeClass = post.user_liked > 0 ? "text-red-500" : "hover:text-red-500";
+          const likeClass = post.user_liked > 0 ? "text-red-500 icon-filled" : "hover:text-red-500";
 
           if (post.type === 'photo' && post.media_url) {
             mediaHtml = `
@@ -448,7 +450,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
             <div class="flex items-center justify-between px-3 pt-3 pb-2">
               <div class="flex items-center gap-4">
                 <button onclick="toggleLike(${post.id}, this)">
-                  <span class="material-symbols-outlined text-[28px] transition-colors ${likeClass}" style="${likeStyle}">favorite</span>
+                  <span class="material-symbols-outlined text-[28px] transition-colors ${likeClass}">favorite</span>
                 </button>
                 <button onclick="toggleComments(${post.id})">
                   <span class="material-symbols-outlined text-[28px]">mode_comment</span>
