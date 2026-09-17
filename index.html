@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!-- 📝 Ithu HTML5 structure start -->
+
+<html class="dark" lang="en">
+<head>
+  <!-- 🔤 Character encoding and screen size set -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- 🌕 Page title -->
+  <title>LUNARA - Your Guide to the Cosmos</title>
+  
+  <!-- 🎨 Tailwind CSS link -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- 🪶 Google fonts connect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet"/>
+  
+  <!-- 💫 Google icons for symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+  <!-- ⚙️ Tailwind config customize -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#7f13ec",             // main theme color
+            "background-light": "#f7f6f8",    // light mode bg
+            "background-dark": "#191022",     // dark mode bg
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"] // default font
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- 🧿 Icon style -->
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+
+  <!-- 📏 Page height fix -->
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-100">
+<!-- Layout Container -->
+<div class="relative flex min-h-screen w-full flex-col md:flex-row mx-auto max-w-5xl md:px-4 lg:px-8">
+
+  <!-- 📱 Mobile Top Navigation Bar (Hidden on md+) -->
+  <header class="md:hidden flex items-center bg-white/80 dark:bg-[#120b18]/80 backdrop-blur-md p-4 pb-3 justify-between sticky top-0 z-50 border-b border-zinc-200/50 dark:border-white/10">
+    <h1 class="text-xl font-extrabold tracking-tight text-primary">LUNARA</h1>
+    <div class="flex items-center justify-end gap-4">
+      <button class="flex items-center justify-center"><span class="material-symbols-outlined text-[28px]">notifications</span></button>
+      <button class="flex items-center justify-center"><span class="material-symbols-outlined text-[28px]">chat</span></button>
+    </div>
+  </header>
+
+  <!-- 💻 PC Side Navigation (Hidden on mobile) & 📱 Mobile Bottom Nav -->
+  <nav class="fixed bottom-0 left-0 w-full bg-white dark:bg-[#120b18] border-t border-zinc-200/50 dark:border-white/10 z-50 pb-safe
+              md:relative md:w-20 lg:w-64 md:border-t-0 md:border-r md:h-screen md:bg-transparent md:dark:bg-transparent md:pt-8 md:pb-8 md:px-2 lg:px-4 flex md:flex-col md:justify-start">
+    
+    <!-- Logo for PC -->
+    <div class="hidden md:flex mb-8 items-center justify-center lg:justify-start px-2">
+       <h1 class="hidden lg:block text-2xl font-extrabold tracking-tight text-primary">LUNARA</h1>
+       <span class="lg:hidden material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">nightlight</span>
+    </div>
+
+    <!-- Nav Links Container -->
+    <div class="flex justify-around items-center h-14 md:h-auto md:flex-col md:gap-2 md:items-start w-full">
+      
+      <!-- Home (Active) -->
+      <a href="#" class="flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-900 dark:text-white font-bold group">
+        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="hidden lg:block text-lg">Home</span>
+      </a>
+
+      <!-- Search -->
+      <a href="#" class="flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white group">
+        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">search</span>
+        <span class="hidden lg:block text-lg">Search</span>
+      </a>
+
+      <!-- Create Post (+) -->
+      <a href="#" class="flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white group">
+        <!-- Mobile styled Add button -->
+        <div class="md:hidden bg-primary text-white p-2 rounded-xl shadow-lg shadow-primary/30 transform hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-2xl font-bold">add</span>
+        </div>
+        <!-- PC styled Add button -->
+        <span class="hidden md:block material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">add_box</span>
+        <span class="hidden lg:block text-lg">Create</span>
+      </a>
+
+      <!-- Notifications (Moved from header on PC) -->
+      <a href="#" class="hidden md:flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white group">
+        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">favorite</span>
+        <span class="hidden lg:block text-lg">Notifications</span>
+      </a>
+
+      <!-- Direct Messages (Moved from header on PC) -->
+      <a href="#" class="hidden md:flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white group">
+        <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">chat</span>
+        <span class="hidden lg:block text-lg">Messages</span>
+      </a>
+
+      <!-- Mobile Activity (Heart) -->
+      <a href="#" class="md:hidden flex flex-col items-center justify-center w-full h-full text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
+        <span class="material-symbols-outlined text-3xl">favorite</span>
+      </a>
+
+      <!-- Profile -->
+      <a href="#" class="flex flex-col md:flex-row items-center md:justify-start lg:gap-4 w-full h-full md:p-3 rounded-xl md:hover:bg-zinc-100 md:dark:hover:bg-white/5 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white md:mt-auto group">
+        <div class="w-8 h-8 rounded-full bg-zinc-200 overflow-hidden border border-zinc-300 dark:border-zinc-700 group-hover:scale-110 transition-transform">
+          <img src="https://i.pravatar.cc/150?img=68" alt="My Profile" class="w-full h-full object-cover">
+        </div>
+        <span class="hidden lg:block text-lg">Profile</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- 🪐 Main Feed Content -->
+  <main class="w-full grow pb-20 md:pb-0 flex justify-center">
+    <div class="w-full max-w-md lg:max-w-[470px] md:mt-8 md:mb-8 sm:border-x md:border-x-0 border-zinc-200/50 dark:border-white/10 bg-white dark:bg-[#120b18] md:bg-transparent shadow-xl md:shadow-none">
+
+      <!-- 📸 POST 1: Photo -->
+      <article class="border-b border-zinc-200/50 dark:border-white/10 pb-4 mb-4 md:bg-white md:dark:bg-[#120b18] md:rounded-xl md:border md:shadow-sm">
+        <!-- Post Header -->
+        <div class="flex items-center justify-between p-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-pink-500 p-[2px]">
+              <div class="w-full h-full rounded-full bg-white dark:bg-[#120b18] border border-white dark:border-zinc-800 overflow-hidden">
+                 <img src="https://i.pravatar.cc/150?img=1" alt="User avatar" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div>
+              <p class="font-bold text-sm">luna_watcher</p>
+              <p class="text-xs text-zinc-500">2 hours ago</p>
+            </div>
+          </div>
+          <button><span class="material-symbols-outlined text-zinc-500">more_horiz</span></button>
+        </div>
+        
+        <!-- Post Media -->
+        <div class="w-full aspect-square bg-zinc-200 dark:bg-zinc-800">
+          <img src="https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?q=80&w=1000&auto=format&fit=crop" alt="Moon photo" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Post Actions -->
+        <div class="flex items-center justify-between px-3 pt-3 pb-2">
+          <div class="flex items-center gap-4">
+            <button><span class="material-symbols-outlined text-[28px] hover:text-red-500 transition-colors">favorite</span></button>
+            <button><span class="material-symbols-outlined text-[28px]">mode_comment</span></button>
+            <button><span class="material-symbols-outlined text-[28px]">send</span></button>
+          </div>
+          <button><span class="material-symbols-outlined text-[28px]">bookmark</span></button>
+        </div>
+
+        <!-- Likes & Caption -->
+        <div class="px-3 text-sm">
+          <p class="font-bold mb-1">1,432 likes</p>
+          <p><span class="font-bold mr-1">luna_watcher</span>Caught the waning gibbous perfectly through the clouds tonight! 🌖✨ #moon #astrophotography</p>
+          <p class="text-zinc-500 mt-1 cursor-pointer">View all 24 comments</p>
+        </div>
+      </article>
+
+      <!-- 🎬 POST 2: Video (Mock) -->
+      <article class="border-b border-zinc-200/50 dark:border-white/10 pb-4 mb-4 md:bg-white md:dark:bg-[#120b18] md:rounded-xl md:border md:shadow-sm">
+        <div class="flex items-center justify-between p-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-pink-500 p-[2px]">
+              <div class="w-full h-full rounded-full bg-white dark:bg-[#120b18] border border-white dark:border-zinc-800 overflow-hidden">
+                 <img src="https://i.pravatar.cc/150?img=32" alt="User avatar" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div>
+              <p class="font-bold text-sm">starry_nights</p>
+              <p class="text-xs text-zinc-500">5 hours ago</p>
+            </div>
+          </div>
+          <button><span class="material-symbols-outlined text-zinc-500">more_horiz</span></button>
+        </div>
+        
+        <div class="w-full aspect-[4/5] bg-zinc-900 relative flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?q=80&w=1000&auto=format&fit=crop" alt="Moon video thumbnail" class="w-full h-full object-cover opacity-80">
+          <div class="absolute inset-0 flex items-center justify-center">
+             <div class="w-16 h-16 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-primary/80 transition-colors">
+                <span class="material-symbols-outlined text-4xl ml-1">play_arrow</span>
+             </div>
+          </div>
+          <div class="absolute top-3 right-3 bg-black/60 rounded px-2 py-1 flex items-center">
+            <span class="material-symbols-outlined text-white text-sm">videocam</span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between px-3 pt-3 pb-2">
+          <div class="flex items-center gap-4">
+            <button><span class="material-symbols-outlined text-[28px] text-red-500 text-[28px]" style="font-variation-settings: 'FILL' 1;">favorite</span></button>
+            <button><span class="material-symbols-outlined text-[28px]">mode_comment</span></button>
+            <button><span class="material-symbols-outlined text-[28px]">send</span></button>
+          </div>
+          <button><span class="material-symbols-outlined text-[28px]">bookmark</span></button>
+        </div>
+
+        <div class="px-3 text-sm">
+          <p class="font-bold mb-1">8,092 likes</p>
+          <p><span class="font-bold mr-1">starry_nights</span>Time-lapse of the moon rising over the mountains. Just breathtaking. ⛰️🌕</p>
+        </div>
+      </article>
+
+      <!-- ✍️ POST 3: Quote -->
+      <article class="border-b border-zinc-200/50 dark:border-white/10 pb-4 mb-4 md:bg-white md:dark:bg-[#120b18] md:rounded-xl md:border md:shadow-sm">
+        <div class="flex items-center justify-between p-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 overflow-hidden">
+               <img src="https://i.pravatar.cc/150?img=5" alt="User avatar" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="font-bold text-sm">cosmic_quotes</p>
+              <p class="text-xs text-zinc-500">8 hours ago</p>
+            </div>
+          </div>
+          <button><span class="material-symbols-outlined text-zinc-500">more_horiz</span></button>
+        </div>
+        
+        <div class="w-full aspect-square bg-gradient-to-br from-primary to-indigo-900 flex items-center justify-center p-8 text-center shadow-inner md:rounded-sm">
+          <h2 class="text-white text-3xl font-display font-bold leading-tight">
+            "Three things cannot be long hidden: the sun, the moon, and the truth."
+          </h2>
+        </div>
+
+        <div class="flex items-center justify-between px-3 pt-3 pb-2">
+          <div class="flex items-center gap-4">
+            <button><span class="material-symbols-outlined text-[28px] hover:text-red-500 transition-colors">favorite</span></button>
+            <button><span class="material-symbols-outlined text-[28px]">mode_comment</span></button>
+            <button><span class="material-symbols-outlined text-[28px]">send</span></button>
+          </div>
+          <button><span class="material-symbols-outlined text-[28px]">bookmark</span></button>
+        </div>
+
+        <div class="px-3 text-sm">
+          <p class="font-bold mb-1">540 likes</p>
+          <p><span class="font-bold mr-1">cosmic_quotes</span>Buddha 🌙✨</p>
+        </div>
+      </article>
+
+    </div>
+  </main>
+</div>
+</body>
+</html>

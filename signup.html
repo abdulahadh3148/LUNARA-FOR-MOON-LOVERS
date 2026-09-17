@@ -1,0 +1,114 @@
+<!-- 🌙 Lunara Signup Page - HTML Code with Thanglish Comments -->
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Lunara - Create Your Account</title>
+
+  <!-- 🌸 Tailwind CSS link pannirukkom - Styling easy ah pannanum nu -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- 🌸 Google fonts use pannirukkom - Nice font ku -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+  <style>
+    /* 🌸 Font family set pannirukkom */
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    /* 🌸 Input focus pannumbodhu violet color border varum */
+    .form-input:focus {
+      --tw-ring-color: #8A2BE2 !important;
+      border-color: #8A2BE2 !important;
+    }
+  </style>
+
+  <!-- 🌸 Tailwind theme custom colors -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#7f13ec",
+            "background-dark": "#191022",
+            "lunara-navy": "#0A0A23",
+            "lunara-violet": "#8A2BE2",
+            "lunara-silver": "#EAEAEA"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-lunara-navy font-display antialiased">
+  <!-- 🌙 Full screen container - center ah align panna -->
+  <div class="flex min-h-screen items-center justify-center bg-lunara-navy p-4">
+    
+    <!-- 🌙 Transparent box background + blur -->
+    <main class="w-full max-w-md rounded-xl bg-[rgba(20,20,40,0.5)] backdrop-blur-lg border border-white/10 p-8">
+      
+      <!-- 🌙 Title section -->
+      <div class="flex flex-col items-center pb-6 text-center">
+        <svg class="mb-2 text-lunara-silver" fill="none" height="48" viewBox="0 0 24 24" width="48">
+          <path d="M12 2C6.48..." fill="currentColor"></path>
+        </svg>
+        <h1 class="text-lunara-silver text-3xl font-bold">Join LUNARA</h1>
+        <p class="text-white/60 text-sm mt-1">Create your free account 🌙</p>
+      </div>
+
+      <!-- 🌙 Signup form -->
+      <form class="flex flex-col gap-4">
+        <!-- 🌸 Name input -->
+        <label>
+          <p class="text-lunara-silver font-medium pb-2">Full Name</p>
+          <div class="relative">
+            <input class="form-input w-full rounded-lg border border-white/20 bg-white/5 text-white/80 h-14 pl-12 p-4" 
+              placeholder="Your Name" type="text"/>
+            <span class="material-symbols-outlined absolute left-4 top-4 text-white/50">person</span>
+          </div>
+        </label>
+
+        <!-- 🌸 Email input -->
+        <label>
+          <p class="text-lunara-silver font-medium pb-2">Email</p>
+          <div class="relative">
+            <input class="form-input w-full rounded-lg border border-white/20 bg-white/5 text-white/80 h-14 pl-12 p-4" 
+              placeholder="you@example.com" type="email"/>
+            <span class="material-symbols-outlined absolute left-4 top-4 text-white/50">mail</span>
+          </div>
+        </label>
+
+        <!-- 🌸 Password input -->
+        <label>
+          <p class="text-lunara-silver font-medium pb-2">Password</p>
+          <div class="relative">
+            <input class="form-input w-full rounded-lg border border-white/20 bg-white/5 text-white/80 h-14 pl-12 p-4" 
+              placeholder="Enter Password" type="password"/>
+            <span class="material-symbols-outlined absolute left-4 top-4 text-white/50">lock</span>
+          </div>
+        </label>
+
+        <!-- 🌸 Submit button -->
+        <button class="rounded-lg bg-gradient-to-r from-lunara-navy to-lunara-violet text-white h-14 font-bold hover:opacity-90 transition-opacity">
+          Create Account
+        </button>
+      </form>
+
+      <!-- 🌸 Already account section -->
+      <p class="mt-6 text-center text-sm text-white/60">
+        Already have an account?
+        <a href="login.html" class="text-lunara-violet font-semibold hover:underline">Login</a>
+      </p>
+    </main>
+  </div>
+</body>
+</html>
